@@ -1,5 +1,8 @@
-import { Factory, path } from '../server/deps.ts';
-import { Application, join, log, send } from './deps.ts';
+import { Factory } from 'https://deno.land/x/vno/dist/mod.ts';
+import { join } from '@std/path';
+import * as log from '@std/log';
+import { type Context, send } from '@oak/oak';
+import { Application } from "@oak/oak/application";
 import routes from './routes.ts';
 
 const clientPort = Deno.env.get('CLIENT_PORT') || 3000;
@@ -14,7 +17,7 @@ export const client = async function() {
 
   log.info('Running client\'s server');
   try {
-    server.use(async (ctx, next) => {
+    server.use(async (ctx: Context, next) => {
       const filePath = ctx.request.url.pathname;
       if (routes.includes(filePath)) {
         await send(ctx, '/', {

@@ -3,12 +3,15 @@ Regenerate QR Codes from google authenticator database app to be easily re-impor
 
 It is a simple fun project used to discover and play with Deno and Vno.
 
-![deno version](https://img.shields.io/badge/deno-^1.13.1-lightgrey?logo=deno)
+![deno version](https://img.shields.io/badge/deno-^2-lightgrey?logo=deno)
+
+## Note
+
+This version is compatible with deno 2.x.
+A legacy branch `deno-1-legacy` is available for deno 1.x.
 
 ## Dependencies
 - [vno](https://github.com/open-source-labs/vno)
-- [denox](https://github.com/BentoumiTech/denox)
-- [Dotenv](https://github.com/pietvanzoen/deno-dotenv)
 
 ## Requirement
 
@@ -19,8 +22,6 @@ This project requires your own `databases` file located under
 It is **NOT** possible to acquire this file unless your phone is **rooted**.
 
 ## Getting started
-
-You need to install [denox](https://github.com/BentoumiTech/denox) first and run
 
 ```bash
 $ denox run start

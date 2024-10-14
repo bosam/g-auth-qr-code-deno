@@ -1,8 +1,10 @@
-import { Context, exists, DB } from '../deps.ts';
-import { Account } from '../types.d.ts';
+import { Database } from '@db/sqlite';
+import type { Context } from '@oak/oak';
+import { exists } from '@std/fs';
+import type { Account } from '../types.d.ts';
 
 class DatabaseService {
-    private filePath: string;
+    private readonly filePath: string;
 
     constructor() {
         this.filePath = '../dbs/database.sqlite';
@@ -19,10 +21,10 @@ class DatabaseService {
     }
 
     async loadAccounts(ctx: Context): Promise<Account[]> {
-        const db = new DB(this.filePath);
+        const db = new Database(this.filePath);
 
-        let results : Account[] = [];
-        for (const acct of db.query('SELECT email, secret, issuer, original_name FROM accounts')) {
+        const results : Account[] = [];
+        for (const acct of db.sql`SELECT email, secret, issuer, original_name FROM accounts`) {
             results.push(<Account> {
                 email: acct[0],
                 secret: acct[1],

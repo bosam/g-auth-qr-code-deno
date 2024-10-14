@@ -1,0 +1,13 @@
+{
+  "name": "@g-auth-qr-code-deno/client",
+  "exports": "./main.ts",
+  "tasks": {
+    "start": "deno run --allow-import main.ts",
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^17.1.0",
+    "@std/log": "jsr:@std/log@^0.224.9",
+    "@std/path": "jsr:@std/path@^1.0.6"
+  }
+}

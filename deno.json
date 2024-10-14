@@ -1,0 +1,16 @@
+{
+  "name": "g-auth-qr-code-deno",
+  "version": "1.0",
+  "workspace": [
+    "./client",
+    "./server"
+  ],
+  "exports": "./main.ts",
+  "tasks": {
+    "start": "deno run --allow-ffi --allow-import --allow-net --allow-read --allow-write --allow-env main.ts",
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.2"
+  }
+}

@@ -1,5 +1,5 @@
-import { Router } from './deps.ts';
-import type { Context } from './deps.ts';
+import { Router } from '@oak/oak/router';
+import type { Context } from '@oak/oak';
 import { uploadService } from './services/uploadService.ts';
 import { databaseService } from './services/databaseService.ts';
 import { qrcodeService } from './services/qrcodeService.ts';

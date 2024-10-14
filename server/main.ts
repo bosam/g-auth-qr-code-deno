@@ -1,13 +1,14 @@
-import { Application, Router, oakCors, log } from './deps.ts';
+import * as log from '@std/log';
+import { Application } from '@oak/oak/application';
+import { cors } from '@momiji/cors';
 import router from './router.ts';
-import { uploadService } from './services/uploadService.ts';
 
 export const server = async function() {
     const serverHostname = Deno.env.get('SERVER_HOSTNAME') || '0.0.0.0';
     const serverPort = Deno.env.get('SERVER_PORT') || 8000;
 
     const app: Application = new Application();
-    app.use(oakCors({ origin: '*' }));
+    app.use(cors());
     app.use(router.routes());
     app.use(router.allowedMethods());
 

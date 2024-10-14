@@ -1,4 +1,5 @@
-import { Context, exists } from '../deps.ts';
+import type { Context } from '@oak/oak';
+import { exists } from '@std/fs';
 
 class Upload {
     async upload(ctx: Context): Promise<void> {

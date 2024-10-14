@@ -1,0 +1,15 @@
+{
+  "name": "@g-auth-qr-code-deno/server",
+  "exports": "./main.ts",
+  "tasks": {
+    "start": "deno run --allow-import --allow-ffi --allow-env --allow-net --allow-read --allow-write main.ts",
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
+    "@momiji/cors": "jsr:@momiji/cors@^1.0.1",
+    "@oak/oak": "jsr:@oak/oak@^17.1.0",
+    "@std/fs": "jsr:@std/fs@^1.0.4",
+    "@std/log": "jsr:@std/log@^0.224.9"
+  }
+}

@@ -1,5 +1,6 @@
-import { Context, qrcode } from '../deps.ts';
-import { Account, QRCode } from '../types.d.ts';
+import type { Context } from '@oak/oak';
+import { qrcode } from 'https://deno.land/x/qrcode/mod.ts';
+import type { Account, QRCode } from '../types.d.ts';
 import { databaseService } from './databaseService.ts';
 
 class QrcodeService {
