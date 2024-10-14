@@ -8,6 +8,7 @@ It is a simple fun project used to discover and play with Deno and Vno.
 ## Note
 
 This version is compatible with deno 2.x.
+
 A legacy branch `deno-1-legacy` is available for deno 1.x.
 
 ## Dependencies
@@ -24,7 +25,7 @@ It is **NOT** possible to acquire this file unless your phone is **rooted**.
 ## Getting started
 
 ```bash
-$ denox run start
+$ deno run start
 ```
 
 This will run 2 servers listening on `.env` port parameters.
